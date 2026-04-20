@@ -1,0 +1,14 @@
+export const cases = [
+  { name: "Cheap Case", min: 1, max: 10 },
+  { name: "Rare Case", min: 10, max: 100 },
+  { name: "Legend Case", min: 100, max: 500 }
+];
+
+export function openCase(index: number) {
+  const c = cases[index];
+
+  const value =
+    Math.random() * (c.max - c.min) + c.min;
+
+  return value;
+}
