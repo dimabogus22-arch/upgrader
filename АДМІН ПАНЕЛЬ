@@ -1,0 +1,11 @@
+export default function Admin() {
+  return (
+    <div style={{ padding: 20 }}>
+      <h1>Admin Panel</h1>
+
+      <button>View users</button>
+      <button>Ban user</button>
+      <button>Give balance</button>
+    </div>
+  );
+}
