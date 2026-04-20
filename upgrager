@@ -1,0 +1,23 @@
+cs2-pro/
+ ├── app/
+ │   ├── page.tsx
+ │   ├── upgrade/page.tsx
+ │   ├── cases/page.tsx
+ │   ├── admin/page.tsx
+ │   ├── api/
+ │       ├── auth/
+ │       ├── upgrade/
+ │       ├── balance/
+ │
+ ├── components/
+ │   ├── UpgradeGame.tsx
+ │   ├── CaseOpen.tsx
+ │
+ ├── lib/
+ │   ├── db.ts
+ │   ├── game.ts
+ │
+ ├── models/
+ │   ├── User.ts
+ │
+ ├── package.json
