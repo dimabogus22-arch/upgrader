@@ -1,0 +1,40 @@
+"use client";
+
+import { useState } from "react";
+import { upgrade } from "@/lib/game";
+
+export default function UpgradeGame() {
+  const [balance, setBalance] = useState(100);
+  const [bet, setBet] = useState(10);
+  const [chance, setChance] = useState(50);
+  const [log, setLog] = useState("");
+
+  const play = () => {
+    if (bet > balance) return;
+
+    const res = upgrade(bet, chance);
+
+    if (res.win) {
+      setBalance(balance + res.profit);
+      setLog("🔥 WIN +$" + res.profit.toFixed(2));
+    } else {
+      setBalance(balance - bet);
+      setLog("💀 LOSS");
+    }
+  };
+
+  return (
+    <div style={{ padding: 30, background: "#0f0f0f", color: "#fff", minHeight: "100vh" }}>
+      <h1>CS2 PRO Upgrade</h1>
+
+      <h2>Balance: ${balance.toFixed(2)}</h2>
+
+      <input value={bet} onChange={(e) => setBet(+e.target.value)} />
+      <input value={chance} onChange={(e) => setChance(+e.target.value)} />
+
+      <button onClick={play}>UPGRADE</button>
+
+      <p>{log}</p>
+    </div>
+  );
+}
