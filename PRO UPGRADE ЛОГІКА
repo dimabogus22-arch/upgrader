@@ -1,0 +1,14 @@
+export function upgrade(bet: number, chance: number) {
+  const roll = Math.random() * 100;
+
+  const win = roll < chance;
+
+  const multiplier = win
+    ? 1 + (100 - chance) / 50
+    : 0;
+
+  return {
+    win,
+    profit: bet * multiplier
+  };
+}
